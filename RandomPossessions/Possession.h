@@ -8,6 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Possession : NSObject
+@interface Possession : NSObject {
+
+	NSString *possessionName;
+	NSString *serialNumber;
+	int valueInDollars;
+	NSDate *dateCreated;
+}
+
+- (void)setPossessionName:(NSString *)str;
+- (NSString *)possessionName;
+
+- (void)setSerialNumber:(NSString *)str;
+- (NSString *)serialNumber;
+
+- (void)setValueInDollars:(NSString *)str;
+- (int)valueInDollars;
+
+- (NSDate *)dateCreatedl
 
 @end

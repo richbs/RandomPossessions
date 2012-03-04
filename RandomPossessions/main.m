@@ -27,7 +27,7 @@ int main (int argc, const char * argv[])
         int strLen = (int)[[items objectAtIndex:i] length];
         NSLog(@"%@: %d", [items objectAtIndex:i], strLen);
     }
-    
+	   
     
     // housekeeping
     [items release];

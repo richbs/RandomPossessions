@@ -10,6 +10,7 @@
 		5ACE7C641503DACD0066D3BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACE7C631503DACD0066D3BE /* Foundation.framework */; };
 		5ACE7C671503DACD0066D3BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE7C661503DACD0066D3BE /* main.m */; };
 		5ACE7C6B1503DACD0066D3BE /* RandomPossessions.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5ACE7C6A1503DACD0066D3BE /* RandomPossessions.1 */; };
+		5ACE7C731503F9F80066D3BE /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE7C721503F9F80066D3BE /* Possession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +30,10 @@
 		5ACE7C5F1503DACD0066D3BE /* RandomPossessions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RandomPossessions; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACE7C631503DACD0066D3BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5ACE7C661503DACD0066D3BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5ACE7C691503DACD0066D3BE /* RandomPossessions-Prefix.pch */ = {isa = PBXFileReference; path = "RandomPossessions-Prefix.pch"; sourceTree = "<group>"; };
+		5ACE7C691503DACD0066D3BE /* RandomPossessions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RandomPossessions-Prefix.pch"; sourceTree = "<group>"; };
 		5ACE7C6A1503DACD0066D3BE /* RandomPossessions.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = RandomPossessions.1; sourceTree = "<group>"; };
+		5ACE7C711503F9F80066D3BE /* Possession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Possession.h; sourceTree = "<group>"; };
+		5ACE7C721503F9F80066D3BE /* Possession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Possession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				5ACE7C661503DACD0066D3BE /* main.m */,
 				5ACE7C6A1503DACD0066D3BE /* RandomPossessions.1 */,
 				5ACE7C681503DACD0066D3BE /* Supporting Files */,
+				5ACE7C711503F9F80066D3BE /* Possession.h */,
+				5ACE7C721503F9F80066D3BE /* Possession.m */,
 			);
 			path = RandomPossessions;
 			sourceTree = "<group>";
@@ -118,7 +123,6 @@
 			};
 			buildConfigurationList = 5ACE7C591503DACD0066D3BE /* Build configuration list for PBXProject "RandomPossessions" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -139,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ACE7C671503DACD0066D3BE /* main.m in Sources */,
+				5ACE7C731503F9F80066D3BE /* Possession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +154,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -167,7 +172,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -175,7 +180,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -186,7 +191,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
@@ -227,6 +233,7 @@
 				5ACE7C701503DACD0066D3BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
