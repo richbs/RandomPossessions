@@ -5,7 +5,7 @@
 //  Created by Richard Barrett-Small on 04/03/2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-
+#import "Possession.h"
 #import <Foundation/Foundation.h>
 
 int main (int argc, const char * argv[])
@@ -27,8 +27,21 @@ int main (int argc, const char * argv[])
         int strLen = (int)[[items objectAtIndex:i] length];
         NSLog(@"%@: %d", [items objectAtIndex:i], strLen);
     }
-	   
-    
+	
+	Possession *p = [[Possession alloc] init];
+	
+		//Set stfi
+	[p setPossessionName:@"Red Sofa"];
+	
+	[p setSerialNumber:@"OIUTSD&77"];
+	
+	[p setValueInDollars:123];
+	
+	NSLog(@"%@ %@ %@ %d", [p possessionName], [p dateCreated],
+						[p serialNumber], [p valueInDollars]);
+
+	
+	
     // housekeeping
     [items release];
     items = nil;
