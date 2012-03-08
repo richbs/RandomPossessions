@@ -37,8 +37,7 @@ int main (int argc, const char * argv[])
 	
 	[p setValueInDollars:123];
 	
-	NSLog(@"%@ %@ %@ %d", [p possessionName], [p dateCreated],
-						[p serialNumber], [p valueInDollars]);
+	NSLog(@"%@", p);
 
 	
 	

@@ -10,6 +10,30 @@
 
 @implementation Possession
 
+
+-(id)initWithPossessionName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
+{
+	// Call the instance variable initial vals
+	[self setPossessionName:name];
+	[self setValueInDollars:value];
+	[self setSerialNumber:sNumber];
+	dateCreated = [[NSDate alloc] init];
+
+	// Return the address of the new init object
+	return self;
+}
+
+- (NSString *)description
+{
+	NSString *descriptionString =
+		[[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
+									possessionName,
+										serialNumber,
+											valueInDollars,
+												dateCreated];
+	return descriptionString;
+}
+
 - (void)setPossessionName:(NSString *)str
 {
 	possessionName = str;
