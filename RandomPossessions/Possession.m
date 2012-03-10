@@ -18,10 +18,25 @@
 
     NSArray *randomNounList = [NSArray arrayWithObjects:@"Pie", @"Poppet", @"Dress", nil];
     
-    int adjectiveIndex = rand();
-    int nounIndex = rand();
+    int adjectiveIndex = rand() % (int)[randomAdjectiveList count];
+    int nounIndex = (int)rand() % (int)[randomNounList count];
     
-    NSLog(@"%d", adjectiveIndex);
+    
+    NSString *randomName = [NSString stringWithFormat:@"%@ %@", [randomAdjectiveList objectAtIndex:adjectiveIndex], [randomNounList objectAtIndex:nounIndex]];
+    
+    int randValue = rand() % 100;
+    
+    NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c", 
+                                                '0' + rand() % 10,
+                                                'A' + rand() % 26,
+                                                '0' + rand() % 10];
+    
+    // What memory problems with this method?
+    Possession *newPossession = [[self alloc] initWithPossessionName:randomName
+                                                        valueInDollars:randValue
+                                                        serialNumber:randomSerialNumber];
+
+    return newPossession;
 }
 
 -(id)initWithPossessionName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber

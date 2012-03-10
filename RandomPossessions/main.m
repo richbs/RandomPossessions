@@ -16,31 +16,17 @@ int main (int argc, const char * argv[])
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
     
-    [items addObject:@"foo"];
-    [items addObject:@"bar"];
-    [items addObject:@"baz"];
-    
-    [items insertObject:@"snafu" atIndex:0];
+    for (int i = 0; i < 10; i++) {
+        Possession *p = [Possession randomPossession];
+        [items addObject:p];
+    }
     
     for (int i = 0; i < [items count]; i++) {
-        
-        int strLen = (int)[[items objectAtIndex:i] length];
-        NSLog(@"%@: %d", [items objectAtIndex:i], strLen);
+        NSLog(@"%@", [items objectAtIndex:i]);        
     }
+		
 	
-	Possession *p = [[Possession alloc] init];
-	
-		//Set stfi
-	[p setPossessionName:@"Red Sofa"];
-	
-	[p setSerialNumber:@"OIUTSD&77"];
-	
-	[p setValueInDollars:123];
-	
-	NSLog(@"%@", p);
 
-	
-	
     // housekeeping
     [items release];
     items = nil;
