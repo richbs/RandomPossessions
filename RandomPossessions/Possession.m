@@ -10,14 +10,33 @@
 
 @implementation Possession
 
++ (id)randomPossession
+{
+    // Random adjectives
+    NSArray *randomAdjectiveList = [NSArray arrayWithObjects:@"Round", @"Pretty",
+                                                                    @"Colourful", nil];
+
+    NSArray *randomNounList = [NSArray arrayWithObjects:@"Pie", @"Poppet", @"Dress", nil];
+    
+    int adjectiveIndex = rand();
+    int nounIndex = rand();
+    
+    NSLog(@"%d", adjectiveIndex);
+}
 
 -(id)initWithPossessionName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
 {
-	// Call the instance variable initial vals
-	[self setPossessionName:name];
-	[self setValueInDollars:value];
-	[self setSerialNumber:sNumber];
-	dateCreated = [[NSDate alloc] init];
+	self = [super init];
+	
+	// Did the superclass initializer succeed
+	
+	if (self) {
+		// Call the instance variable initial vals
+		[self setPossessionName:name];
+		[self setValueInDollars:value];
+		[self setSerialNumber:sNumber];
+		dateCreated = [[NSDate alloc] init];		
+	}
 
 	// Return the address of the new init object
 	return self;
