@@ -21,11 +21,8 @@ int main (int argc, const char * argv[])
         [items addObject:p];
     }
     
-    for (int i = 0; i < [items count]; i++) {
-        NSLog(@"%@", [items objectAtIndex:i]);        
-    }
-		
-	
+    for (Possession *item in items)
+        NSLog(@"%@", item);        
 
     // housekeeping
     [items release];
