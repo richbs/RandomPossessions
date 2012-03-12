@@ -36,7 +36,7 @@
                                                         valueInDollars:randValue
                                                         serialNumber:randomSerialNumber];
 
-    return newPossession;
+    return [newPossession autorelease];
 }
 
 -(id)initWithPossessionName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
@@ -59,17 +59,18 @@
 
 - (NSString *)description
 {
-	NSString *descriptionString =
-		[[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
+
+    return [NSString stringWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
 									possessionName,
 										serialNumber,
 											valueInDollars,
 												dateCreated];
-	return descriptionString;
 }
 
 - (void)setPossessionName:(NSString *)str
 {
+    [str retain];
+    [possessionName release];
 	possessionName = str;
 }
 - (NSString *)possessionName
@@ -78,6 +79,8 @@
 }
 - (void)setSerialNumber:(NSString *)str
 {
+    [str retain];
+    [serialNumber release];
 	serialNumber = str;
 }
 - (NSString *)serialNumber
@@ -95,6 +98,13 @@
 - (NSDate *)dateCreated
 {
 	return dateCreated;
+}
+- (void)dealloc
+{
+    [possessionName release];
+    [serialNumber release];
+    [dateCreated release];
+    [super dealloc];
 }
 
 @end
