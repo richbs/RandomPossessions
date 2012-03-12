@@ -9,6 +9,7 @@
 #import "Possession.h"
 
 @implementation Possession
+@synthesize possessionName, serialNumber, valueInDollars, dateCreated;
 
 + (id)randomPossession
 {
@@ -67,38 +68,6 @@
 												dateCreated];
 }
 
-- (void)setPossessionName:(NSString *)str
-{
-    [str retain];
-    [possessionName release];
-	possessionName = str;
-}
-- (NSString *)possessionName
-{
-	return possessionName;
-}
-- (void)setSerialNumber:(NSString *)str
-{
-    [str retain];
-    [serialNumber release];
-	serialNumber = str;
-}
-- (NSString *)serialNumber
-{
-	return serialNumber;
-}
-- (void)setValueInDollars:(int)i
-{
-	valueInDollars = i;
-}
-- (int)valueInDollars
-{
-	return valueInDollars;
-}
-- (NSDate *)dateCreated
-{
-	return dateCreated;
-}
 - (void)dealloc
 {
     [possessionName release];

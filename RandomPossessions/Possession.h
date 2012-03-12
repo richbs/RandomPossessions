@@ -22,15 +22,9 @@
 				valueInDollars:(int)value
 				serialNumber:(NSString *)sNumber;
 
-- (void)setPossessionName:(NSString *)str;
-- (NSString *)possessionName;
-
-- (void)setSerialNumber:(NSString *)str;
-- (NSString *)serialNumber;
-
-- (void)setValueInDollars:(int)i;
-- (int)valueInDollars;
-
-- (NSDate *)dateCreated;	
+@property (nonatomic, copy) NSString *possessionName;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) int valueInDollars;
+@property (nonatomic, readonly) NSDate *dateCreated;
 
 @end
