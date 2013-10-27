@@ -4,12 +4,19 @@
 //
 //  Created by Richard Barrett-Small on 04/03/2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//x
 
 #import "Possession.h"
 
 @implementation Possession
 @synthesize possessionName, serialNumber, valueInDollars, dateCreated;
+
+-(id)init
+{
+    return [self initWithPossessionName:@"Item"
+                         valueInDollars:0
+                           serialNumber:@"N507"];
+}
 
 + (id)randomPossession
 {
@@ -56,6 +63,13 @@
 
 	// Return the address of the new init object
 	return self;
+}
+
+-(id)initWithPossessionName:(NSString *)name serialNumber:(NSString *)sNumber
+{
+    return [self initWithPossessionName:name
+                         valueInDollars:300
+                           serialNumber:sNumber];
 }
 
 - (NSString *)description

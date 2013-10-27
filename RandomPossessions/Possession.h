@@ -22,6 +22,9 @@
 				valueInDollars:(int)value
 				serialNumber:(NSString *)sNumber;
 
+-(id)initWithPossessionName:(NSString *)name
+               serialNumber:(NSString *)sNumber;
+
 @property (nonatomic, copy) NSString *possessionName;
 @property (nonatomic, copy) NSString *serialNumber;
 @property (nonatomic) int valueInDollars;
