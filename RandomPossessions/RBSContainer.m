@@ -27,7 +27,6 @@
 	// Did the superclass initializer succeed
 	
 	if (self) {
-        NSLog(@"Yes");
 		// Call the instance variable initial vals
 		[self setPossessionName:name];
 		[self setValueInDollars:value];
@@ -41,18 +40,43 @@
 }
 
 -(NSString *)description {
+    
+    return [NSString stringWithFormat:@"I contain %lu items totalling $%d. They are %@", [[self subItems] count],  [self fullValue], [self allItems]];
+}
 
-    
+-(int)fullValue
+{
     uint totalValue = 0;
-    
     for (Possession *it in [self subItems]) {
         totalValue += it.valueInDollars;
-        NSLog(@"sub %@", it);
     }
-    
     totalValue += self.valueInDollars;
-    
-    return [NSString stringWithFormat:@"I contain %lu items totalling $%d",  (unsigned long)[[self subItems] count],  totalValue];
+    return totalValue;
 }
+
+-(NSString *)allItems
+{
+    NSString *itemString;
+    itemString = [NSString stringWithFormat:@"goo"];
+    
+    for (id thing in [self subItems])
+    {
+
+        if ([thing isMemberOfClass:[self class]]) {
+            itemString = [NSString stringWithFormat:@"Container: %@, %@", self.possessionName, itemString];
+        } else {
+            itemString = [NSString stringWithFormat:@"%@, %@", thing, itemString];
+  
+        }
+    }
+    return itemString;
+}
+
+- (void)dealloc
+{
+    [subItems release];
+    [super dealloc];
+}
+
 
 @end

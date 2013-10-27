@@ -74,7 +74,6 @@
 
 - (NSString *)description
 {
-
     return [NSString stringWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
 									possessionName,
 										serialNumber,

@@ -16,6 +16,9 @@
                         valueInDollars:(int)value
                             serialNumber:(NSString *)sNumber;
 
+-(int)fullValue;
+-(NSString *)allItems;
+
 @property (nonatomic, strong) NSMutableArray *subItems;
 
 @end

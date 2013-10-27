@@ -13,26 +13,20 @@ int main (int argc, const char * argv[])
 {
 
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
-    RBSContainer *c = [[RBSContainer alloc] init];
-    [c setValueInDollars:400];
-    NSLog(@"%@", [c possessionName]);
+    RBSContainer *c = [[RBSContainer alloc] initWithContainerName:@"Foo" valueInDollars:3 serialNumber:@"N557"];
     
     for (int i = 0; i < 10; i++) {
-        NSString *sNumber = [NSString stringWithFormat:@"SN%d", i];
-        Possession *p = [[Possession alloc] initWithPossessionName:@"goo" serialNumber:sNumber];
+        Possession *p = [Possession randomPossession];
         [items addObject:p];
-        NSLog(@"%@", p);
         [[c subItems] addObject:p];
-        NSLog(@"%lu", (unsigned long)c.subItems.count);
     }
 
     [[c subItems] addObject:c];
-    NSLog(@"%lu", (unsigned long)c.subItems.count);
-    NSLog(@"%@", c);
- 
+    
+    NSLog(@"%@", [c description]);
+    
     // housekeeping
     [items release];
     items = nil;
